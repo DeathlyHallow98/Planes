@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://code/KinematicBody2D/grid_entity.gd" type="Script" id=1]
+[ext_resource path="res://resources/sprites/arrow/frames.tres" type="SpriteFrames" id=2]
+
+[node name="grid_entity" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+max_speed = 150
+density = 1
+opacity = 1
+
+[node name="sprites" type="Node2D" parent="."]
+
+[node name="overlays" type="Node2D" parent="sprites"]
+
+[node name="base" type="AnimatedSprite" parent="sprites"]
+
+frames = ExtResource( 2 )
+animation = "down"
+
+

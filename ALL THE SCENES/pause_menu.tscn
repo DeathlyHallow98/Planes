@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://pause_menu.gd" type="Script" id=1]
+
+[node name="pause_menu" type="Container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 525.0
+margin/top = 178.0
+margin/right = 747.0
+margin/bottom = 390.0
+script/script = ExtResource( 1 )
+
+[node name="Menu" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 13.0
+margin/top = 8.0
+margin/right = 213.0
+margin/bottom = 68.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Main Menu"
+flat = false
+
+[node name="resume" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 13.0
+margin/top = 68.0
+margin/right = 213.0
+margin/bottom = 128.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "resume"
+flat = false
+
+[node name="Resart" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 12.0
+margin/top = 130.0
+margin/right = 212.0
+margin/bottom = 190.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Restart"
+flat = false
+
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
+
+[connection signal="pressed" from="Resart" to="." method="_on_Resart_pressed"]
+
+

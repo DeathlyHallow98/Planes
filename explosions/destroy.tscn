@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://explosions/destroy.gd" type="Script" id=1]
+[ext_resource path="res://explosions/Explosion part 1-01.png" type="Texture" id=2]
+[ext_resource path="res://explosions/Explosion part 2-01.png" type="Texture" id=3]
+[ext_resource path="res://explosions/Explosion part 3-01.png" type="Texture" id=4]
+[ext_resource path="res://explosions/explosion part 4-01.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ null, null ],
+"loop": true,
+"name": "end_def",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ null ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="destroy" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="explosions" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 12.0886, -2.41774 )
+frames = SubResource( 1 )
+animation = "default"
+
+[node name="lame" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 2 )
+animation = "default"
+
+[connection signal="finished" from="explosions" to="." method="_on_explosions_finished"]
+
+

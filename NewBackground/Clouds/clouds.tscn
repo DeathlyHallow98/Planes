@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://NewBackground/Clouds/clouds.gd" type="Script" id=1]
+[ext_resource path="res://NewBackground/Clouds/BG-01.png" type="Texture" id=2]
+[ext_resource path="res://NewBackground/Clouds/Cloud3-01.png" type="Texture" id=3]
+[ext_resource path="res://NewBackground/Clouds/Cloud6-01.png" type="Texture" id=4]
+[ext_resource path="res://NewBackground/Clouds/Cloud2-01.png" type="Texture" id=5]
+[ext_resource path="res://NewBackground/Clouds/Cloud5-01.png" type="Texture" id=6]
+[ext_resource path="res://NewBackground/Clouds/Cloud4-01.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "fourth_cloud",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "six_cloud",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "second_cloud",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), null, null, null, ExtResource( 6 ) ],
+"loop": true,
+"name": "five_cloud",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "third_cloud",
+"speed": 5.0
+} ]
+
+[node name="clouds" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Cloud1" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 190.624, -102.692 )
+transform/scale = Vector2( 1.72206, 1.64182 )
+frames = SubResource( 1 )
+animation = "default"
+
+[node name="Cloud6" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( -470.528, 303.923 )
+transform/scale = Vector2( 2.00103, 1.35911 )
+texture = ExtResource( 7 )
+
+[node name="Cloud6-01" type="Sprite" parent="Cloud6"]
+
+transform/pos = Vector2( -3147.6, 682.105 )
+texture = ExtResource( 4 )
+
+[node name="Cloud6-01 2" type="Sprite" parent="Cloud6"]
+
+transform/pos = Vector2( -4148.63, 474.573 )
+texture = ExtResource( 4 )
+
+[node name="Cloud6-01 3" type="Sprite" parent="Cloud6"]
+
+transform/pos = Vector2( -1786.34, 198.28 )
+transform/scale = Vector2( 3.26639, 2.93562 )
+texture = ExtResource( 4 )
+
+[node name="Cloud5" type="Sprite" parent="."]
+
+transform/pos = Vector2( -1713.1, 460.254 )
+transform/scale = Vector2( 2.05751, 1.98296 )
+texture = ExtResource( 6 )
+
+[node name="Cloud5-01" type="Sprite" parent="."]
+
+transform/pos = Vector2( -2909.16, 266.884 )
+transform/scale = Vector2( 3.13976, 2.28618 )
+texture = ExtResource( 6 )
+
+

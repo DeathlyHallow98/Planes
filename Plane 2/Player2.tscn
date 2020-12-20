@@ -1,0 +1,105 @@
+[gd_scene load_steps=16 format=1]
+
+[ext_resource path="res://Plane 2/Player2.gd" type="Script" id=1]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 West.png" type="Texture" id=2]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 West copy.png" type="Texture" id=3]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 NorthWest copy 2.png" type="Texture" id=4]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 NorthWest 2 copy 2.png" type="Texture" id=5]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 South.png" type="Texture" id=6]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 NorthWest 2.png" type="Texture" id=7]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 NorthWest.png" type="Texture" id=8]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 North2.png" type="Texture" id=9]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 SouthWest.png" type="Texture" id=10]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 SouthWest2.png" type="Texture" id=11]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 NorthWest copy.png" type="Texture" id=12]
+[ext_resource path="res://Plane 2/red Plane/Plane 2 NorthWest 2 copy.png" type="Texture" id=13]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "move-east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "move-NE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "move-down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "move-west",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "move-NW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "move-up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "move-SE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "move-SW",
+"speed": 5.0
+} ]
+
+[node name="Player2" type="KinematicBody2D" groups=[
+"red",
+]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 26, 0, 0, 6, 17.1049, 0 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="plane2" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 2 )
+animation = "default"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 17.1049, 0 )
+transform/scale = Vector2( 26, 6 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+

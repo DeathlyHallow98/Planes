@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://NewBackground/Sky/BG-01.png" type="Texture" id=1]
+[ext_resource path="res://NewBackground/Mountains-01.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( -2.03302, 105.469 )
+transform/scale = Vector2( 1, 0.565968 )
+frames = SubResource( 1 )
+animation = "default"
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -4.64258, 268.66 )
+transform/scale = Vector2( 1, 0.343765 )
+texture = ExtResource( 2 )
+
+

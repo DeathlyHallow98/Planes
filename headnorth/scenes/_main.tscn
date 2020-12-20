@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://code/Node/GameState.gd" type="Script" id=1]
+[ext_resource path="res://code/Node/gamelevel.gd" type="Script" id=2]
+
+[node name="GameState" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="GameLevel" type="Node" parent="."]
+
+script = ExtResource( 2 )
+initial_scene = "res://scenes/mainmenu.tscn"
+
+
